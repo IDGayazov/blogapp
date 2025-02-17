@@ -1,12 +1,22 @@
 import React from 'react';
 import NavBar from '../NavBar/index.tsx';
-import { StyledHeader } from './index.style.ts';
+import { StyledHeader, StyledLogo, StyledLogoLink } from './index.style.ts';
+
+const Logo = () => {
+    return (
+        <StyledLogo>
+            <StyledLogoLink to="/">
+                <h1>Storia</h1>
+            </StyledLogoLink>
+        </StyledLogo>
+    );
+}
 
 const Header = () => {
     return (
         <StyledHeader>
+            <Logo/>
             <NavBar/>
-            <hr/>
         </StyledHeader>
     );
 }

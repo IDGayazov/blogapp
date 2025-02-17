@@ -1,20 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { StyledUl } from "./index.style.ts";
+import { StyledUl, StyledLi, StyledLink } from "./index.style.ts";
 
 const NavBar = () => {
     return (
         <nav>
             <StyledUl>
-                <li>
-                    <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/about">About</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/blog">Blog</NavLink>
-                </li>
+                <StyledLi>
+                    <StyledLink to="/">Home</StyledLink>
+                </StyledLi>
+                <StyledLi>
+                    <StyledLink to="/about">About</StyledLink>
+                </StyledLi>
+                <StyledLi>
+                    <StyledLink to="/blog">Blog</StyledLink>
+                </StyledLi>
             </StyledUl>
         </nav>
     );

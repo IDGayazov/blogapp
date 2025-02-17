@@ -10,6 +10,10 @@ body {
 	height: 100%;
     font-family: "Ubuntu", sans-serif;
     font-size: 18px;
+
+    color: white;
+
+    background-color: #0e2027;
 }
 
 input,
