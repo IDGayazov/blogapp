@@ -1,10 +1,13 @@
 import React from 'react';
+import NavBar from '../NavBar/index.tsx';
+import { StyledHeader } from './index.style.ts';
 
 const Header = () => {
     return (
-        <header>
-            Header
-        </header>
+        <StyledHeader>
+            <NavBar/>
+            <hr/>
+        </StyledHeader>
     );
 }
 
