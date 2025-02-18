@@ -1,13 +1,10 @@
 import React from 'react';
+import HomePageText from '../components/HomePageText/index.tsx';
 
 const Home = () => {
-    const styled = {
-        'marginLeft': '50%',
-        'marginTop': '20%',
-    }
 
     return (
-        <div style={styled}>Home</div>
+        <HomePageText/>
     );
 }
 

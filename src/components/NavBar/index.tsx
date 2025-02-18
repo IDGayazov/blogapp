@@ -1,9 +1,9 @@
 import React from "react";
-import { StyledUl, StyledLi, StyledLink } from "./index.style.ts";
+import { StyledUl, StyledLi, StyledLink, StyledNav } from "./index.style.ts";
 
 const NavBar = () => {
     return (
-        <nav>
+        <StyledNav>
             <StyledUl>
                 <StyledLi>
                     <StyledLink to="/">Home</StyledLink>
@@ -15,7 +15,7 @@ const NavBar = () => {
                     <StyledLink to="/blog">Blog</StyledLink>
                 </StyledLi>
             </StyledUl>
-        </nav>
+        </StyledNav>
     );
 }
 
