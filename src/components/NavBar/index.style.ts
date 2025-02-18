@@ -1,5 +1,6 @@
 import styled from "@emotion/styled/macro";
 import { NavLink } from "react-router-dom";
+import { colors } from "../../styles/colors";
 
 export const StyledNav = styled.nav`
     margin: 0 auto;
@@ -21,10 +22,10 @@ export const StyledLink = styled(NavLink)`
     text-decoration: none;
     
     &:hover {
-        color: #82bbd1;
+        color: ${colors.secondary};
     }
 
     &.active {
-        color: #82bbd1;
+        color: ${colors.secondary};
     }
 `;
