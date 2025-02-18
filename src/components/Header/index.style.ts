@@ -25,7 +25,7 @@ export const StyledHeader = styled.header`
 export const StyledLogo = styled.div`
     position: absolute; 
     left: 40px;
-    top: 30px;
+    top: 20px;
 `;
 
 export const StyledLogoLink = styled(NavLink)`

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../NavBar/index.tsx';
 import { StyledHeader, StyledLogo, StyledLogoLink } from './index.style.ts';
+import LanguageSwitcher from '../LanguageSwitcher/index.tsx';
 
 const Logo = () => {
     return (
@@ -17,6 +18,7 @@ const Header = () => {
         <StyledHeader>
             <Logo/>
             <NavBar/>
+            <LanguageSwitcher/>
         </StyledHeader>
     );
 }
