@@ -2,8 +2,12 @@
     "home": "Home",
     "about": "About",
     "blog": "Blog",
+
     "footer": "All rights reserved",
+
     "home_page_text_big": "Share your hobbies",
     "home_page_text_small": "It only takes a few minutes to create your own blog.",
-    "home_page_button": "Create blog"
+    "home_page_button": "Create blog",
+
+    "read_more": "Read more" 
 }

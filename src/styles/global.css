@@ -23,15 +23,7 @@ textarea {
 }
 
 #content{
-	width: 800px;
+	width: 80%;
 	min-height: 100%;
 	margin:0 auto;
-}
-
-#footer{
-	width: 800px;
-	height: 150px;
-	background: #66cc00;
-	margin:auto;
-	clear:both;
 }
