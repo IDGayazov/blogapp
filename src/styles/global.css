@@ -21,3 +21,17 @@ button,
 textarea {
 	font-family: inherit;
 }
+
+#content{
+	width: 800px;
+	min-height: 100%;
+	margin:0 auto;
+}
+
+#footer{
+	width: 800px;
+	height: 150px;
+	background: #66cc00;
+	margin:auto;
+	clear:both;
+}

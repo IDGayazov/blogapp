@@ -1,10 +1,17 @@
 import React from 'react';
 import HomePageText from '../components/HomePageText/index.tsx';
+import Blog from '../components/Blog/index.tsx';
+
+import { StyledPageWrapper } from '../ui-kit/PageWrapper.tsx';
 
 const Home = () => {
 
     return (
-        <HomePageText/>
+        <StyledPageWrapper>
+            <HomePageText/>
+            <Blog/>
+            <Blog/>
+        </StyledPageWrapper>
     );
 }
 
