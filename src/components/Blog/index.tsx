@@ -7,7 +7,7 @@ const Blog = ({ articles }) => {
     return (
         <StyledBlogWrapper>
             {articles.map(article => (
-                <Article key={article.name} article={article} />
+                <Article key={article.id} article={article} />
             ))}
         </StyledBlogWrapper>
     );

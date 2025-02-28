@@ -1,12 +1,13 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-
+import { useNavigate } from 'react-router-dom';
 import BlogImage from "../BlogImage/index.tsx";
 import { BlurredText, ReadMoreOverlay, StyledDescriptionText, StyledTitle, VisibleText } from "./index.style.ts";
 import img1 from '../../stubs/images/more.jpg';
 
 const Article = ({ article }) => {
-    const {t} = useTranslation()
+    const navigate = useNavigate();
+    const {t} = useTranslation();
     const wordLimit = 100;
 
     const showReadMore = article.description.split(' ').length > wordLimit;
@@ -22,7 +23,7 @@ const Article = ({ article }) => {
                 <VisibleText>{visibleText}</VisibleText>
                 <BlurredText>{blurredText}</BlurredText>
                 {showReadMore && (
-                    <ReadMoreOverlay onClick={() => {console.log("read more clicked")}}>
+                    <ReadMoreOverlay onClick={() => {navigate(`/article/${article.id}`)}}>
                         {t('read_more')}
                     </ReadMoreOverlay>
                 )}

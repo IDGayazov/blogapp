@@ -1,5 +1,6 @@
 export const articles = [
     {
+        id: "1",
         name: "Article title",
         url: '../images/more.jpg',
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
