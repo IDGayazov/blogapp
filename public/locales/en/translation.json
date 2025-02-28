@@ -2,6 +2,7 @@
     "home": "Home",
     "about": "About",
     "blog": "Blog",
+    "auth": "Sign In",
 
     "footer": "All rights reserved",
 
@@ -9,5 +10,13 @@
     "home_page_text_small": "It only takes a few minutes to create your own blog.",
     "home_page_button": "Create blog",
 
-    "read_more": "Read more" 
+    "read_more": "Read more", 
+
+    "auth_title_in": "Sign In",
+    "auth_title_up": "Sign Up",
+    "auth_name": "Name",
+    "auth_password": "Password",
+    "auth_email": "Email",
+    "auth_sign_in": "Sign In",
+    "auth_sign_up": "Sign Up"
 }

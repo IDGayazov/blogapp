@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { articles } from '../stubs/api/articles';
 import styled from "@emotion/styled";
+
+import { articles } from '../stubs/api/articles';
 import img1 from '../stubs/images/more.jpg';
 import BlogImage from '../components/BlogImage/index.tsx';
 import { StyledPageWrapper } from '../ui-kit/PageWrapper.tsx';

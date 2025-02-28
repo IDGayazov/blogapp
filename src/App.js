@@ -7,6 +7,7 @@ import Footer from './components/Footer/index.tsx';
 import Home from './pages/Home.tsx';
 import Blog from './pages/Blog.tsx';
 import About from './pages/About.tsx';
+import AuthPage from './pages/AuthPage/AuthPage.tsx';
 
 import './styles/global.css';
 import Article from './pages/Article.tsx';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/blog" element={<Blog/>} />
           <Route path="/article/:id" element={<Article/>} />
+          <Route path="/auth" element={<AuthPage/>} />
         </Routes>
       </div>
       <Footer/>

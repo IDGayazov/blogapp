@@ -17,6 +17,9 @@ const NavBar = () => {
                 <StyledLi>
                     <StyledLink to="/blog">{t('blog')}</StyledLink>
                 </StyledLi>
+                <StyledLi>
+                    <StyledLink to="/auth">{t('auth')}</StyledLink>
+                </StyledLi>
             </StyledUl>
         </StyledNav>
     );
