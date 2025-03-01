@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { AuthResponse, SignInRequest } from './types'
+import type { AuthResponse, SignInRequest, SignUpRequest } from './types'
 
 export const authApi = createApi({
   reducerPath: 'authApi',
@@ -12,7 +12,14 @@ export const authApi = createApi({
         body,
       }),
     }),
+    getAuthTokenForSignUp: build.mutation<AuthResponse, SignUpRequest>({
+      query: (body) => ({
+        url: 'sign-up',
+        method: 'POST',
+        body,
+      }),
+    }),
   }),
 })
 
-export const { useGetAuthTokenForSignInMutation } = authApi;
+export const { useGetAuthTokenForSignInMutation, useGetAuthTokenForSignUpMutation } = authApi;

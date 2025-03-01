@@ -14,11 +14,14 @@
 
     "auth_title_in": "Авторизация",
     "auth_title_up": "Регистрация",
-    "auth_name": "Имя",
+    "auth_name": "Логин",
     "auth_password": "Пароль",
     "auth_email": "Почта",
     "auth_sign_in": "Войти",
     "auth_sign_up": "Зарегистрироваться",
+
+    "auth_firstname": "Имя",
+    "auth_lastname": "Фамилия",
 
     "logout": "Выйти"
 

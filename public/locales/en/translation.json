@@ -20,6 +20,9 @@
     "auth_sign_in": "Sign In",
     "auth_sign_up": "Sign Up",
 
+    "auth_firstname": "firstname",
+    "auth_lastname": "lastname",
+
     "logout": "Logout"
 
 }
