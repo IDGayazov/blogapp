@@ -11,7 +11,7 @@ import AuthPage from './pages/AuthPage/AuthPage.tsx';
 
 import './styles/global.css';
 import Article from './pages/Article.tsx';
-import Profile from './pages/Profile.tsx';
+import Profile from './pages/Profile/Profile.tsx';
 
 import { AuthProvider } from './AuthContext.tsx';
 

@@ -23,6 +23,11 @@
     "auth_firstname": "firstname",
     "auth_lastname": "lastname",
 
-    "logout": "Logout"
+    "logout": "Logout",
+
+    "Firstname": "Firstname",
+    "Lastname": "Lastname",
+    "Email": "Email",
+    "Bio": "Bio"
 
 }

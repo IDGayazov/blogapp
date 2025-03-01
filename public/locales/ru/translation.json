@@ -23,6 +23,11 @@
     "auth_firstname": "Имя",
     "auth_lastname": "Фамилия",
 
-    "logout": "Выйти"
+    "logout": "Выйти",
+
+    "Firstname": "Имя",
+    "Lastname": "Фамилия",
+    "Email": "Почта",
+    "Bio": "О себе"
 
 }
