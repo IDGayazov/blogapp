@@ -1,9 +1,20 @@
-import React from "react";
-import { StyledUl, StyledLi, StyledLink, StyledNav } from "./index.style.ts";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
+
+import { 
+    StyledUl, StyledLi, 
+    StyledLink, StyledNav, StyledButton 
+} from "./index.style.ts";
+import { AuthContext } from "../../AuthContext.tsx";
 
 const NavBar = () => {
     const {t} = useTranslation();
+    const {token, setToken} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        setToken(null);
+    }
 
     return (
         <StyledNav>
@@ -17,9 +28,18 @@ const NavBar = () => {
                 <StyledLi>
                     <StyledLink to="/blog">{t('blog')}</StyledLink>
                 </StyledLi>
-                <StyledLi>
-                    <StyledLink to="/auth">{t('auth')}</StyledLink>
-                </StyledLi>
+                {
+                    token ?
+                    <StyledLi>
+                        <StyledButton as="button" onClick={handleLogout}>
+                            {t('logout')}
+                        </StyledButton>
+                    </StyledLi> 
+                    : 
+                    <StyledLi>
+                        <StyledLink to="/auth">{t('auth')}</StyledLink>
+                    </StyledLi> 
+                }
             </StyledUl>
         </StyledNav>
     );

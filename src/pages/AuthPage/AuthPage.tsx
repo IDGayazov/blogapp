@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useGetAuthTokenForSignInMutation } from '../../store/api/authApi.tsx';
 
 import './AuthPage.css';
+import { AuthContext } from '../../AuthContext.tsx';
 
 const AuthPage = () => {
   const {t} = useTranslation();
-  const [getAuthToken, { data, isLoading, error }] = useGetAuthTokenForSignInMutation();
+  const [getAuthToken] = useGetAuthTokenForSignInMutation();
+  const {token, setToken} = useContext(AuthContext);
 
   const handleLoginSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,12 +17,13 @@ const AuthPage = () => {
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;
     const password = formData.get('password') as string;
-    
-    console.log(name + ' ' + password);
 
     try {
       const result = await getAuthToken({ username: name, password: password }).unwrap();
       console.log('Auth Token:', result);
+      
+      localStorage.setItem('token', result.token);
+      setToken(result.token);
     } catch (err) {
       console.error('Failed to sign in:', err);
     }

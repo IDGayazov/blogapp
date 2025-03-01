@@ -18,5 +18,8 @@
     "auth_password": "Пароль",
     "auth_email": "Почта",
     "auth_sign_in": "Войти",
-    "auth_sign_up": "Зарегистрироваться"
+    "auth_sign_up": "Зарегистрироваться",
+
+    "logout": "Выйти"
+
 }

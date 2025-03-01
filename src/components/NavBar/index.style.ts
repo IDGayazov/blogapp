@@ -29,3 +29,14 @@ export const StyledLink = styled(NavLink)`
         color: ${colors.secondary};
     }
 `;
+
+
+export const StyledButton = styled.button`
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: none;
+`;
