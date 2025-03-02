@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from './components/Header/index.tsx';
@@ -13,12 +13,10 @@ import './styles/global.css';
 import Article from './pages/Article.tsx';
 import Profile from './pages/Profile/Profile.tsx';
 
-import { AuthProvider } from './AuthContext.tsx';
+import { AuthContext, AuthProvider } from './AuthContext.tsx';
+import PrivateRoute from './components/PrivateRoute/index.tsx';
 
 function App() {
-
-  const token = localStorage.getItem('token');
-
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -31,10 +29,11 @@ function App() {
             <Route path="/article/:id" element={<Article/>} />
             <Route path="/auth" element={<AuthPage/>} />
             {
-              <Route 
-                path="/profile/:id" 
-                element={token ? <Profile/> : <Navigate to="/auth" replace/>} 
-              />
+              <Route element={<PrivateRoute />}>
+                <Route path="/profile/:id" 
+                  element={<Profile />} 
+                />
+              </Route>
             }
           </Routes>
         </div>

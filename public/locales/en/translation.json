@@ -28,6 +28,8 @@
     "Firstname": "Firstname",
     "Lastname": "Lastname",
     "Email": "Email",
-    "Bio": "Bio"
+    "Bio": "Bio",
+
+    "profile": "Profile"
 
 }

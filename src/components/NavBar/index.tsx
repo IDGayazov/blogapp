@@ -14,6 +14,7 @@ const NavBar = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         setToken(null);
+        window.location.reload();
     }
 
     return (
@@ -22,6 +23,14 @@ const NavBar = () => {
                 <StyledLi>
                     <StyledLink to="/">{t('home')}</StyledLink>
                 </StyledLi>
+                {
+                    token &&
+                    <StyledLi>
+                        <StyledLink to="/profile/:id">
+                            {t('profile')}
+                        </StyledLink>
+                    </StyledLi> 
+                }
                 <StyledLi>
                     <StyledLink to="/about">{t('about')}</StyledLink>
                 </StyledLi>
