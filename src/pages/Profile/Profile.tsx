@@ -1,10 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import avatar from '../../stubs/images/avatar.jpeg';
+// import avatar from '../../stubs/images/avatar.jpeg';
 import './Profile.css';
 import { useGetUserByIdQuery } from '../../store/api/userApi.tsx';
 import { useParams } from 'react-router-dom';
+import AvatarImage from '../../components/AvatarImage/index.tsx';
 
 const Profile = () => {
 
@@ -31,11 +32,14 @@ const Profile = () => {
       }
 
     const user = data;
+    console.log(data);
+    const avatarUrl = (user.avatarUrl || '');
+    console.log(avatarUrl);
 
     return (
         <div className="profile-container">
             <div className="profile-header">
-                <img src={avatar} alt="User Avatar" className="profile-avatar" />
+                <AvatarImage avatarUrl={avatarUrl}/>
                 <h1 className="profile-username">{user?.username}</h1>
             </div>
 

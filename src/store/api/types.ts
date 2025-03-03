@@ -20,7 +20,7 @@ export interface UserData{
     firstname: string,
     lastname: string,
     email: string,
-    avatar_url: string | undefined,
+    avatarUrl: string | undefined,
     bio: string | undefined,
     created_date: Date
 }
