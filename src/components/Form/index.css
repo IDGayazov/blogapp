@@ -15,9 +15,14 @@
 .auth-form input {
     width: 90%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 2px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.auth-form div {
+    margin: 20px 0;
+    text-align: start;
 }
 
 .auth-form button {
@@ -38,12 +43,10 @@
     margin-top: 15px;
 }
 
-.auth-form span {
-    color: #82bbd1;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.auth-form span:hover {
-    color: #82bbd1;
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    padding-left: 3px;
+    margin-bottom: 20px;
 }
