@@ -9,11 +9,12 @@ import { AuthContext } from "../../AuthContext.tsx";
 
 const NavBar = () => {
     const {t} = useTranslation();
-    const {token, setToken} = useContext(AuthContext);
+    const {token, userId, setTokenState, setUserId} = useContext(AuthContext);
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        setToken(null);
+        setTokenState(null);
+        setUserId('');
         window.location.reload();
     }
 

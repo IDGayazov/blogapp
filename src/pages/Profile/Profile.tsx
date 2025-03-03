@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {users} from '../../stubs/api/users'
 import avatar from '../../stubs/images/avatar.jpeg';
 import './Profile.css';
+import { useGetUsersByIdQuery } from '../../store/api/userApi.tsx';
+import { AuthContext } from '../../AuthContext.tsx';
 
 const Profile = () => {
 
     const {t} = useTranslation();
-    const user = users.find(user => user.id === 1);
+    const { userId, setUserId } = useContext(AuthContext);
+    const { data, isFetching, isLoading } = useGetUsersByIdQuery(userId);
+    const user = data; //users.find(user => user.id === 1);
 
     return (
         <div className="profile-container">

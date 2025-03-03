@@ -12,7 +12,7 @@ import { AuthContext } from '../../AuthContext.tsx';
 const AuthPage = () => {
   const {t} = useTranslation();
   const navigate = useNavigate();
-  const { setToken } = useContext(AuthContext);
+  const { setTokenState } = useContext(AuthContext);
 
   const [getAuthTokenSignIn] = useGetAuthTokenForSignInMutation();
   const [getAuthTokenSignUp] = useGetAuthTokenForSignUpMutation();
@@ -29,7 +29,7 @@ const AuthPage = () => {
       console.log('Auth Token:', result);
       
       localStorage.setItem('token', result.token);
-      setToken(result.token);
+      setTokenState(result.token);
       navigate('/');
     } catch (err) {
       console.error('Failed to sign in:', err);
@@ -56,10 +56,10 @@ const AuthPage = () => {
         password: password 
       }).unwrap();
    
-        console.log('Auth Token:', result);
+      console.log('Auth Token:', result);
       
       localStorage.setItem('token', result.token);
-      setToken(result.token);
+      setTokenState(result.token);
       navigate('/');
     } catch (err) {
       console.error('Failed to sign up:', err);

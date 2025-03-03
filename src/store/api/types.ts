@@ -14,3 +14,13 @@ export interface SignUpRequest{
     email: string,
     password: string
 }
+
+export interface UserData{
+    username: string,
+    firstname: string,
+    lastname: string,
+    email: string,
+    avatar_url: string | undefined,
+    bio: string | undefined,
+    created_date: Date
+}
