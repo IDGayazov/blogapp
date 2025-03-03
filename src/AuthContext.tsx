@@ -3,12 +3,12 @@ import { jwtDecode } from 'jwt-decode';
 
 interface AuthContextType {
     token: string | null;
-    userId: string;
+    userId: string | null;
     setTokenState: (token: string | null) => void;
-    setUserId: (userId: string) => void;
+    setUserId: (userId: string | null) => void;
 }
 
-interface CustomJwtPayload {
+export interface CustomJwtPayload {
     id: string;
     exp: number;
 }
@@ -33,7 +33,7 @@ const isTokenExpired = (token: string) => {
 export const AuthProvider = ({ children }:  { children: React.ReactNode }) => {
 
     const [token, setToken] = useState(localStorage.getItem('token'));
-    const [userId, setUserId] = useState('');
+    const [userId, setUserId] = useState(localStorage.getItem('userId'));
 
     const setTokenState = (newToken) => {
         if(newToken && !isTokenExpired(newToken)){
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }:  { children: React.ReactNode }) => {
               localStorage.removeItem('token');
               setToken(null); 
             }else{
-                const decodedToken = jwtDecode(token) as CustomJwtPayload;
+                const decodedToken = jwtDecode<CustomJwtPayload>(token);
                 setUserId(decodedToken.id);
                 startTokenExpirationTimer(token);
             }

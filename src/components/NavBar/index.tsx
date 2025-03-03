@@ -27,7 +27,7 @@ const NavBar = () => {
                 {
                     token &&
                     <StyledLi>
-                        <StyledLink to="/profile/:id">
+                        <StyledLink to={`/profile/${userId}`}>
                             {t('profile')}
                         </StyledLink>
                     </StyledLi> 

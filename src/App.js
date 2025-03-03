@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header/index.tsx';
 import Footer from './components/Footer/index.tsx';
@@ -13,7 +13,7 @@ import './styles/global.css';
 import Article from './pages/Article.tsx';
 import Profile from './pages/Profile/Profile.tsx';
 
-import { AuthContext, AuthProvider } from './AuthContext.tsx';
+import { AuthProvider } from './AuthContext.tsx';
 import PrivateRoute from './components/PrivateRoute/index.tsx';
 
 function App() {

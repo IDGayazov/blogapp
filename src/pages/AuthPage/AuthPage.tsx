@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from 'jwt-decode';
 
 import { 
   useGetAuthTokenForSignInMutation, 
   useGetAuthTokenForSignUpMutation 
 } from '../../store/api/authApi.tsx';
 import './AuthPage.css';
-import { AuthContext } from '../../AuthContext.tsx';
+import { AuthContext, CustomJwtPayload } from '../../AuthContext.tsx';
 
 const AuthPage = () => {
   const {t} = useTranslation();
   const navigate = useNavigate();
+
   const { setTokenState } = useContext(AuthContext);
+  const { setUserId } = useContext(AuthContext);
 
   const [getAuthTokenSignIn] = useGetAuthTokenForSignInMutation();
   const [getAuthTokenSignUp] = useGetAuthTokenForSignUpMutation();
@@ -30,6 +33,13 @@ const AuthPage = () => {
       
       localStorage.setItem('token', result.token);
       setTokenState(result.token);
+
+      const decodeToken = jwtDecode<CustomJwtPayload>(result.token);
+      localStorage.setItem('userId', decodeToken.id);
+      setUserId(decodeToken.id);
+
+      console.log(decodeToken.id);
+
       navigate('/');
     } catch (err) {
       console.error('Failed to sign in:', err);
@@ -60,6 +70,11 @@ const AuthPage = () => {
       
       localStorage.setItem('token', result.token);
       setTokenState(result.token);
+
+      const decodeToken = jwtDecode<CustomJwtPayload>(result.token);
+      localStorage.setItem('userId', decodeToken.id);
+      setUserId(decodeToken.id);
+
       navigate('/');
     } catch (err) {
       console.error('Failed to sign up:', err);

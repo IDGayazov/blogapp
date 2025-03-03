@@ -1,18 +1,36 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {users} from '../../stubs/api/users'
 import avatar from '../../stubs/images/avatar.jpeg';
 import './Profile.css';
 import { useGetUsersByIdQuery } from '../../store/api/userApi.tsx';
-import { AuthContext } from '../../AuthContext.tsx';
+import { useParams } from 'react-router-dom';
 
 const Profile = () => {
 
     const {t} = useTranslation();
-    const { userId, setUserId } = useContext(AuthContext);
-    const { data, isFetching, isLoading } = useGetUsersByIdQuery(userId);
-    const user = data; //users.find(user => user.id === 1);
+    const params = useParams();
+    const { data, isLoading, isError } = useGetUsersByIdQuery(params.id || '', {
+        skip: !params.id
+    });
+
+    if (!params.id) {
+        return <div>Ошибка: ID пользователя не указан</div>;
+      }
+    
+      if (isLoading) {
+        return <div>Загрузка...</div>;
+      }
+    
+      if (isError) {
+        return <div>Ошибка при загрузке данных</div>;
+      }
+    
+      if (!data) {
+        return <div>Данные не найдены</div>;
+      }
+
+    const user = data;
 
     return (
         <div className="profile-container">
