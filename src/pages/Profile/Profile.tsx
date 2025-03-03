@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import avatar from '../../stubs/images/avatar.jpeg';
 import './Profile.css';
-import { useGetUsersByIdQuery } from '../../store/api/userApi.tsx';
+import { useGetUserByIdQuery } from '../../store/api/userApi.tsx';
 import { useParams } from 'react-router-dom';
 
 const Profile = () => {
 
     const {t} = useTranslation();
     const params = useParams();
-    const { data, isLoading, isError } = useGetUsersByIdQuery(params.id || '', {
+    const { data, isLoading, isError } = useGetUserByIdQuery(params.id || '', {
         skip: !params.id
     });
 
