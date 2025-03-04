@@ -1,11 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-// import avatar from '../../stubs/images/avatar.jpeg';
 import './Profile.css';
 import { useGetUserByIdQuery } from '../../store/api/userApi.tsx';
 import { useParams } from 'react-router-dom';
 import AvatarImage from '../../components/AvatarImage/index.tsx';
+import Loading from '../../components/Loading/index.tsx';
+import ErrorMessage from '../../components/Error/index.tsx';
 
 const Profile = () => {
 
@@ -16,20 +17,44 @@ const Profile = () => {
     });
 
     if (!params.id) {
-        return <div>Ошибка: ID пользователя не указан</div>;
-      }
+      return (
+        <div className="profile-container">
+          <div className="profile-header">
+            <ErrorMessage message="Ошибка ID пользователя не указан"/>
+          </div>
+        </div>
+      );
+    }
     
-      if (isLoading) {
-        return <div>Загрузка...</div>;
-      }
-    
-      if (isError) {
-        return <div>Ошибка при загрузке данных</div>;
-      }
-    
-      if (!data) {
-        return <div>Данные не найдены</div>;
-      }
+    if (isLoading) {
+      return (
+        <div className="profile-container">
+          <div className="profile-header">
+            <Loading/>
+          </div>
+        </div>
+      );
+    }
+  
+    if (isError) {
+      return (
+        <div className="profile-container">
+          <div className="profile-header">
+            <ErrorMessage message="Произошла ошибка при получении данных"/>
+          </div>
+        </div>
+      );
+    }
+  
+    if (!data) {
+      return (
+        <div className="profile-container">
+          <div className="profile-header">
+            <ErrorMessage message="Данные не найдены"/>
+          </div>
+        </div>
+      );
+    }
 
     const user = data;
     console.log(data);

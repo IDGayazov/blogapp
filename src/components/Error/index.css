@@ -1,0 +1,32 @@
+.err-msg {
+    padding: 15px 20px;
+    background-color: #ffebee; 
+    border: 1px solid #ffcdd2; 
+    border-radius: 8px; 
+    color: #c62828; 
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: inline-block;
+    max-width: 600px;
+    margin: 20px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.err-msg::before {
+    content: "⚠️"; 
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
